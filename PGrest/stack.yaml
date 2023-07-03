@@ -1,0 +1,16 @@
+resolver: lts-20.6 # 2023-01-09, GHC 9.2.5
+
+nix:
+  packages:
+    - pcre
+    - pkgconfig
+    - postgresql
+    - zlib
+  # disable pure by default so that the test enviroment can be passed
+  pure: false
+
+extra-deps:
+  - git: https://github.com/PostgREST/postgresql-libpq.git
+    commit: 890a0a16cf57dd401420fdc6c7d576fb696003bc
+  - hasql-notifications-0.2.0.5
+  - hasql-pool-0.10
